@@ -4,15 +4,54 @@
  */
 package zoologico;
 
-/**
- *
- * @author Daniel
- */
-
-
 import java.util.Scanner;
 
 public class Principal {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Crear un Zoológico
+        Zoologico zoo = new Zoologico(1, "Zona Tropical");
+
+        while (true) {
+            // Menú principal
+            System.out.println("Bienvenido al Zoológico La Aurora");
+            System.out.println("1. Agregar nuevo animal");
+            System.out.println("2. Ver todos los animales");
+            System.out.println("3. Alimentar animales");
+            System.out.println("4. Calcular comida consumida en un periodo");
+            System.out.println("5. Exportar datos a CSV");
+            System.out.println("6. Salir");
+            System.out.print("Selecciona una opción: ");
+
+            int opcion = scanner.nextInt();
+            scanner.nextLine();  // Limpiar el buffer de entrada
+
+            switch (opcion) {
+                case 1 -> agregarAnimal(zoo, scanner);
+
+                case 2 -> zoo.listarAnimales();
+
+                case 3 -> zoo.alimentarAnimales();
+
+                case 4 -> {
+                    System.out.print("Ingrese el número de días: ");
+                    int dias = scanner.nextInt();
+                    zoo.calcularComida(dias);
+                }
+
+                case 5 -> zoo.exportarDatosCSV();
+
+                case 6 -> {
+                    System.out.println("Gracias por usar el sistema del Zoológico La Aurora. ¡Hasta pronto!");
+                    scanner.close();
+                    return;  // Salir del programa
+                }
+                default -> System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+            }
+        }
+    }
 
     public static void agregarAnimal(Zoologico zoo, Scanner scanner) {
         System.out.println("¿Qué tipo de animal deseas agregar? (1. Mamífero, 2. Ave, 3. Reptil)");
@@ -58,4 +97,3 @@ public class Principal {
         return scanner.nextDouble();
     }
 }
-
