@@ -8,7 +8,6 @@ package zoologico;
  *
  * @author Daniel
  */
-package zoologico;
 
 public class Reptil extends Animal {
 
