@@ -97,4 +97,4 @@ public class Principal {
         return scanner.nextDouble();
     }
 }
-/// dinopollo dinopollo
+/// gerson es gay
