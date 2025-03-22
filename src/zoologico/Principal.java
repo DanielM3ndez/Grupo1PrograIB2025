@@ -97,4 +97,4 @@ public class Principal {
         return scanner.nextDouble();
     }
 }
-/// prueba de ingreso datos todos somos pollo
+/// dinopollo dinopollo
