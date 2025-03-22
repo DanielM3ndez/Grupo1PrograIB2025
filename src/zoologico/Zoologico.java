@@ -11,15 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Zoologico {
-
+    
+    private static int contadorCodigo = 1;
     private int codigo;
     private String zona;
-    private List<Animal> animales;  // Lista para almacenar los animales
+    private final List<Animal> animales;  
 
     public Zoologico(int codigo, String zona) {
         this.codigo = codigo;
         this.zona = zona;
-        this.animales = new ArrayList<>(); // Inicializamos la lista de animales
+        this.animales = new ArrayList<>(); 
     }
 
     // Métodos de acceso (getters y setters)
@@ -43,7 +44,7 @@ public class Zoologico {
     public void agregarAnimal(Animal animal) {
         if (animal != null) {
             animales.add(animal);
-            System.out.println("Animal " + animal.getNombre() + " agregado correctamente.");
+            System.out.println(animal.getNombre() + "Animal " + " agregado correctamente.");
         } else {
             System.out.println("El animal no pudo ser agregado.");
         }
@@ -52,9 +53,9 @@ public class Zoologico {
     // Método para listar todos los animales
     public void listarAnimales() {
         if (animales.isEmpty()) {
-            System.out.println("No hay animales en el zoológico.");
+            System.out.println("No hay animales en el zoologico.");
         } else {
-            System.out.println("Animales en el zoológico:");
+            System.out.println("Animales en el zoologico:");
             for (Animal animal : animales) {
                 System.out.println(animal);
             }
@@ -83,7 +84,7 @@ public class Zoologico {
     // Exportar los datos de los animales a un archivo CSV
     public void exportarDatosCSV() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("zoologico.csv"))) {
-            writer.write("Código, Nombre, Dieta, Edad, Consumo Diario (libras)\n");
+            writer.write("Codigo, Nombre, Dieta, Edad, Consumo Diario (libras)\n");
             for (Animal animal : animales) {
                 writer.write(animal.getCodigo() + "," + animal.getNombre() + "," + animal.getDieta() + "," 
                         + animal.getEdad() + "," + animal.getConsumoDiario() + "\n");
@@ -92,5 +93,8 @@ public class Zoologico {
         } catch (IOException e) {
             System.out.println("Error al guardar los datos.");
         }
+    }
+    public static int obtenerNuevoCodigo() {
+        return contadorCodigo++;
     }
 }

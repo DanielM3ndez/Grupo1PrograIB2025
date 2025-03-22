@@ -9,12 +9,13 @@ import zoologico.Zoologico;
 
 public class Mamifero extends Animal {
 
+  
     public Mamifero(int Codigo, String nombre, int edad, Zoologico zoologico, double consumoDiario) {
-        super(Codigo, nombre, Dieta.CARNIVORO, edad, zoologico, consumoDiario);
+        super(Codigo, nombre,  Dieta.CARNIVORO, edad, zoologico, consumoDiario);
     }
 
     @Override
     public void alimentar() {
-        System.out.println("El mamífero " + getNombre() + " está siendo alimentado con " + getConsumoDiario() + " libras de carne.");
+        System.out.println( "El mamifero " + getNombre() + " esta siendo alimentado con " + getConsumoDiario() + " libras de carne.");
     }
 }
