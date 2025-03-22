@@ -97,4 +97,4 @@ public class Principal {
         return scanner.nextDouble();
     }
 }
-/// gerson es gay
+//// daniel que onda mdklsmelkdmclss
