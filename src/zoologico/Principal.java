@@ -97,4 +97,4 @@ public class Principal {
         return scanner.nextDouble();
     }
 }
-//// daniel que onda mdklsmelkdmclss
+//// wilson y gerson se aman
