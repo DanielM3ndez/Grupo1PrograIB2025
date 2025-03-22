@@ -72,7 +72,7 @@ public abstract class Animal {
         this.consumoDiario = consumoDiario;
     }
 
-    // Método abstracto que debe ser implementado por las subclases.
+    // Método abstracto que debe ser implementado por las subclases de una manera mas comoda
     public abstract void alimentar();
 
     // Método para calcular la comida consumida en 'dias' días.

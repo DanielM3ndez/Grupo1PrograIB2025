@@ -16,7 +16,7 @@ public class Principal {
 
         while (true) {
             // Menú principal
-            System.out.println("Bienvenido al Zoológico La Aurora");
+            System.out.println("Bienvenido al Zoologico");
             System.out.println("1. Agregar nuevo animal");
             System.out.println("2. Ver todos los animales");
             System.out.println("3. Alimentar animales");
@@ -97,3 +97,4 @@ public class Principal {
         return scanner.nextDouble();
     }
 }
+/// prueba de ingreso datos todos somos pollo
