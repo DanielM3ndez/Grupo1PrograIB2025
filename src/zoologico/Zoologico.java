@@ -44,7 +44,7 @@ public class Zoologico {
     public void agregarAnimal(Animal animal) {
         if (animal != null) {
             animales.add(animal);
-            System.out.println(animal.getNombre() + "Animal " + " agregado correctamente.");
+            System.out.println(animal.getNombre() + " Es el Animal " + " agregado correctamente.");
         } else {
             System.out.println("El animal no pudo ser agregado.");
         }
