@@ -12,6 +12,6 @@ public class Ave extends Animal {
 
     @Override
     public void alimentar() {
-        System.out.println("El ave " + getNombre() + " está siendo alimentada con " + getConsumoDiario() + " libras de semillas.");
+        System.out.println("El ave " + getNombre() + " esta siendo alimentada con " + getConsumoDiario() + " libras de semillas.");
     }
 }

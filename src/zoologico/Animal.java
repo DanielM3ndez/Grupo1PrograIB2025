@@ -2,6 +2,7 @@
 
 package zoologico;
 
+
 public abstract class Animal {
 
     public enum Dieta {
@@ -82,7 +83,8 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Código: " + Codigo + ", Nombre: " + nombre + ", Dieta: " + dieta + ", Edad: " + edad +
+        return "Codigo: " + Codigo + ", Nombre: " + nombre + ", Dieta: " + dieta + ", Edad: " + edad +
                ", Consumo Diario: " + consumoDiario + " libras.";
+        
     }
 }

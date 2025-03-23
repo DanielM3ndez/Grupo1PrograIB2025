@@ -11,11 +11,11 @@ public class Principal {
     public static void main(String[] args) {
         Scanner scanner;
         scanner = new Scanner(System.in);
-
+            boolean menu = true;
         // Crear un Zoológico
         Zoologico zoo = new Zoologico(1, "Zona Tropical");
 
-        while (true) {
+        while (menu) {
             // Menú principal
             System.out.println("Bienvenido al Zoologico");
             System.out.println("1. Agregar nuevo animal");
@@ -26,9 +26,13 @@ public class Principal {
             System.out.println("6. Salir");
             System.out.print("Selecciona una opcion: ");
 
+            
+        try{
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Limpiar el buffer de entrada
+            scanner.nextLine(); 
+            // Limpiar el buffer de entrada
 
+        
             switch (opcion) {
                 case 1 -> agregarAnimal(zoo, scanner);
 
@@ -51,6 +55,12 @@ public class Principal {
                 }
                 default -> System.out.println("Opcion no valida. Por favor, ingrese una opcion valida.");
             }
+            }catch (java.util.InputMismatchException e) {
+                System.out.println("Error Por favor ingrese un numero valido para la opcion., presione Enter para regresar al menu");
+                scanner.nextLine();
+                scanner.nextLine();
+            }
+            
         }
     }
 
@@ -78,7 +88,7 @@ public class Principal {
             case 1 -> zoo.agregarAnimal(new Mamifero(codigo, nombre, edad, zoologico, comidaDiaria));
             case 2 -> zoo.agregarAnimal(new Ave(codigo, nombre, edad, zoologico, comidaDiaria));
             case 3 -> zoo.agregarAnimal(new Reptil(codigo, nombre, edad, zoologico, comidaDiaria));
-            default -> System.out.println("Opción inválida.");
+            default -> System.out.println("Opcion invalida.");
         }
     }
 
