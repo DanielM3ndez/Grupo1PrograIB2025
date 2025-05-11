@@ -11,13 +11,13 @@ package zoologico;
 
 public class Reptil extends Animal {
 
-    public Reptil(int Codigo, String nombre, int edad, Zoologico zoologico, double consumoDiario) {
-        super(Codigo, nombre, Dieta.HERBIVORO, edad, zoologico, consumoDiario);
+    public Reptil(int idAnimal, String nombre, int edad, Zoologico zoologico, double consumoDiario) {
+        super(idAnimal, nombre, Dieta.HERBIVORO, edad, zoologico, consumoDiario);
     }
 
     @Override
     public void alimentar() {
-        System.out.println("El reptil " + getNombre() + " esta siendo alimentado con " + getConsumoDiario() + " libras de vegetales.");
+        System.out.println("El reptil " + getNombre() + " está siendo alimentado con " + getConsumoDiario() + " libras de vegetales.");
     }
 }
 

@@ -13,23 +13,23 @@ import java.util.List;
 public class Zoologico {
     
     private static int contadorCodigo = 1;
-    private int codigo;
+    private int idAnimal;
     private String zona;
     private final List<Animal> animales;  
 
-    public Zoologico(int codigo, String zona) {
-        this.codigo = codigo;
+    public Zoologico(int idAnimal, String zona) {
+        this.idAnimal = idAnimal;
         this.zona = zona;
         this.animales = new ArrayList<>(); 
     }
 
     // Métodos de acceso (getters y setters)
-    public int getCodigo() {
-        return codigo;
+    public int getidAnimal() {
+        return idAnimal;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setidAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
     public String getZona() {
@@ -44,7 +44,8 @@ public class Zoologico {
     public void agregarAnimal(Animal animal) {
         if (animal != null) {
             animales.add(animal);
-            System.out.println(animal.getNombre() + " Es el Animal " + " agregado correctamente.");
+            System.out.println(animal.getNombre() + "Animal " + " agregado correctamente.");
+            
         } else {
             System.out.println("El animal no pudo ser agregado.");
         }
@@ -84,9 +85,9 @@ public class Zoologico {
     // Exportar los datos de los animales a un archivo CSV
     public void exportarDatosCSV() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("zoologico.csv"))) {
-            writer.write("Codigo, Nombre, Dieta, Edad, Consumo Diario (libras)\n");
+            writer.write("ID, Nombre, Dieta, Edad, Consumo Diario (libras)\n");
             for (Animal animal : animales) {
-                writer.write(animal.getCodigo() + "," + animal.getNombre() + "," + animal.getDieta() + "," 
+                writer.write(animal.getidAnimal() + "," + animal.getNombre() + "," + animal.getDieta() + "," 
                         + animal.getEdad() + "," + animal.getConsumoDiario() + "\n");
             }
             System.out.println("Datos exportados a zoologico.csv.");

@@ -10,8 +10,8 @@ import zoologico.Zoologico;
 public class Mamifero extends Animal {
 
   
-    public Mamifero(int Codigo, String nombre, int edad, Zoologico zoologico, double consumoDiario) {
-        super(Codigo, nombre,  Dieta.CARNIVORO, edad, zoologico, consumoDiario);
+    public Mamifero(int idAnimal, String nombre, int edad, Zoologico zoologico, double consumoDiario) {
+        super(idAnimal, nombre,  Dieta.CARNIVORO, edad, zoologico, consumoDiario);
     }
 
     @Override

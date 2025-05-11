@@ -2,22 +2,21 @@
 
 package zoologico;
 
-
 public abstract class Animal {
 
     public enum Dieta {
         CARNIVORO, HERBIVORO, OMNIVORO;
     }
 
-    private int Codigo;
+    private int idAnimal;
     private String nombre;
     private Dieta dieta; // Usamos el enum en lugar de String
     private int edad;
     private Zoologico zoologico;
     private double consumoDiario;
 
-    public Animal(int Codigo, String nombre, Dieta dieta, int edad, Zoologico zoologico, double consumoDiario) {
-        this.Codigo = Codigo;
+    public Animal(int idAnimal, String nombre, Dieta dieta, int edad, Zoologico zoologico, double consumoDiario) {
+        this.idAnimal = idAnimal;
         this.nombre = nombre;
         this.dieta = dieta;
         this.edad = edad;
@@ -25,12 +24,12 @@ public abstract class Animal {
         this.consumoDiario = consumoDiario;
     }
 
-    public int getCodigo() {
-        return Codigo;
+    public int getidAnimal() {
+        return idAnimal;
     }
 
-    public void setCodigo(int Codigo) {
-        this.Codigo = Codigo;
+    public void setidAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
     public String getNombre() {
@@ -83,8 +82,9 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Codigo: " + Codigo + ", Nombre: " + nombre + ", Dieta: " + dieta + ", Edad: " + edad +
+        return "Id: " + idAnimal + ", Nombre: " + nombre + ", Dieta: " + dieta + ", Edad: " + edad +
                ", Consumo Diario: " + consumoDiario + " libras.";
-        
+     
+    
     }
 }
