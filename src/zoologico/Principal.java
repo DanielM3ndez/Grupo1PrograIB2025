@@ -62,24 +62,24 @@ public class Principal {
       public static void submenuArreglo(Scanner scanner) {
         char opcion;
         do {
-            System.out.println("\n--- Submenú de Arreglos ---");
-            System.out.println("a. Agregar Mamífero");
-            System.out.println("b. Agregar Ave");
-            System.out.println("c. Agregar Reptil");
-            System.out.println("d. Ordenar arreglo por ID");
-            System.out.println("e. Mostrar animales en el arreglo");
-            System.out.println("x. Regresar al menú principal");
-            System.out.print("Selecciona una opción: ");
+            System.out.println("Submenu de Arreglos");
+            System.out.println("1. Agregar Mamifero");
+            System.out.println("2. Agregar Ave");
+            System.out.println("3. Agregar Reptil");
+            System.out.println("4. Ordenar arreglo por ID");
+            System.out.println("5. Mostrar animales en el arreglo");
+            System.out.println("6. Regresar al menu principal");
+            System.out.print("Selecciona una opcion: ");
             opcion = scanner.next().toLowerCase().charAt(0);
 
             switch (opcion) {
-                case 'a', 'b', 'c' -> agregarAnimalArray(scanner, opcion);
-                case 'd' -> ordenarArreglo(scanner);
-                case 'e' -> mostrarArreglo();
-                case 'x' -> {
+                case '1', '2', '3' -> agregarAnimalArray(scanner, opcion);
+                case '4' -> ordenarArreglo(scanner);
+                case '5' -> mostrarArreglo();
+                case '6' -> {
                     return;
                 }
-                default -> System.out.println("Opción inválida.");
+                default -> System.out.println("Opcion invalida.");
             }
         } while (true);
     }
@@ -87,14 +87,14 @@ public class Principal {
     // Agregar animal al arreglo
     public static void agregarAnimalArray(Scanner scanner, char tipo) {
         if (contadorArray >= 10) {
-            System.out.println("El arreglo está lleno.");
+            System.out.println("El arreglo esta lleno.");
             return;
         }
 
         System.out.print("Ingrese el ID del animal: ");
         int id = validarEntradaInt(scanner);
         if (existeIdEnArreglo(id)) {
-            System.out.println("El ID ya existe. Debe ser único.");
+            System.out.println("El ID ya existe. Debe ser diferente.");
             return;
         }
 
@@ -109,16 +109,16 @@ public class Principal {
         double comida = validarEntradaDouble(scanner);
 
         Animal animal = switch (tipo) {
-            case 'a' -> new Mamifero(id, nombre, edad, null, comida);
-            case 'b' -> new Ave(id, nombre, edad, null, comida);
-            case 'c' -> new Reptil(id, nombre, edad, null, comida);
+            case '1' -> new Mamifero(id, nombre, edad, null, comida);
+            case '2' -> new Ave(id, nombre, edad, null, comida);
+            case '3' -> new Reptil(id, nombre, edad, null, comida);
             default -> null;
         };
 
-        if (animal != null) {
+        //if (animal != null) {
             arregloAnimal[contadorArray++] = animal;
             System.out.println("Animal agregado correctamente.");
-        }
+        //}
     }
 
     public static boolean existeIdEnArreglo(int id) {
